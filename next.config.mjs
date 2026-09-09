@@ -8,6 +8,8 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   turbopack: { root: projectRoot },
+  // Linting is run separately (`npm run lint`); don't let it block the build.
+  eslint: { ignoreDuringBuilds: true },
   async headers() {
     return [
       {
