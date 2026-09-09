@@ -16,6 +16,7 @@ export default function FinalCta() {
             <a href="#contact" className="btn btn-primary btn-lg">
               Get a Free Quote <Icon name="arrowRight" size={16} />
             </a>
+            
             <BookConsultation variant="light" size="lg" />
           </div>
         </Reveal>
