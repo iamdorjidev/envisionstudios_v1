@@ -3,9 +3,28 @@
  * Written in the first person — enVision Studio is a solo studio.
  */
 
+const FALLBACK_SITE_URL = 'https://www.envisionstudio.co.nz';
+
+/**
+ * Resolve the canonical site URL from env, tolerating common misconfigurations
+ * (empty string, missing protocol, trailing slash). Never throws — a bad value
+ * falls back so `new URL(SITE.url)` in metadata can't break the build.
+ */
+function resolveSiteUrl(): string {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL ?? '').trim();
+  const candidate = raw || process.env.VERCEL_PROJECT_PRODUCTION_URL || '';
+  if (!candidate) return FALLBACK_SITE_URL;
+  const withProtocol = /^https?:\/\//i.test(candidate) ? candidate : `https://${candidate}`;
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return FALLBACK_SITE_URL;
+  }
+}
+
 export const SITE = {
   name: 'enVision Studio',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.envisionstudio.co.nz',
+  url: resolveSiteUrl(),
   email: 'tdorji.dev@gmail.com',
   location: 'Auckland, New Zealand',
   positioning: 'Websites • Web Applications • Business Systems',
