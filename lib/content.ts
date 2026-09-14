@@ -18,7 +18,9 @@ function resolveSiteUrl(): string {
   try {
     return new URL(withProtocol).origin;
   } catch {
+    
     return FALLBACK_SITE_URL;
+
   }
 }
 

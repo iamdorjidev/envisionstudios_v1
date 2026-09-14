@@ -10,6 +10,7 @@ export default function Hero() {
           <Reveal as="p" className="eyebrow">
             Auckland, New Zealand
           </Reveal>
+          
           <Reveal as="h1" className="hero-title" delay={60}>
             Affordable web &amp; software development for{' '}
             <span className="accent">growing businesses</span>
