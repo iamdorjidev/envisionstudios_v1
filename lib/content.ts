@@ -83,29 +83,64 @@ export const WHY_POINTS = [
   { title: 'Practical & reliable', text: 'Solutions designed to actually solve business problems.' },
 ] as const;
 
-/* ---------- Selected work (only work I can legitimately show) ---------- */
-export const SELECTED_WORK = {
-  name: 'Bumper Buddies',
-  type: 'Booking & business management platform',
-  summary:
-    'An online booking platform for a vehicle service business. Customers book through a guided multi-step wizard that prices each job automatically; behind it, role-based dashboards handle scheduling, invoicing, payments, staff and revenue.',
-  highlights: [
-    'Multi-step online booking',
-    'Automatic job pricing',
-    'Invoices & payments',
-    'Owner, admin & staff dashboards',
-  ],
-  stack: ['Laravel', 'Livewire', 'Tailwind CSS', 'SQLite'],
-} as const;
+/* ---------- Selected work (only live, real projects — no employer work) ---------- */
+export type Project = {
+  name: string;
+  type: string;
+  summary: string;
+  highlights: readonly string[];
+  stack: readonly string[];
+  url: string;
+  image: string;
+  imageWidth: number;
+  imageHeight: number;
+  featured?: boolean;
+};
 
-/* ---------- What I can build (concepts, clearly not client case studies) ---------- */
-export const BUILD_CONCEPTS = [
-  { icon: 'globe', title: 'Business websites' },
-  { icon: 'calendar', title: 'Booking platforms' },
-  { icon: 'gauge', title: 'Admin dashboards' },
-  { icon: 'users', title: 'Customer portals' },
-  { icon: 'database', title: 'Business management systems' },
-] as const;
+export const PROJECTS: readonly Project[] = [
+  {
+    name: 'Bumper Buddies',
+    type: 'Booking & business management platform',
+    summary:
+      'A booking platform for a mobile vehicle service business. Customers book through a guided multi-step wizard that prices each job automatically; behind it, role-based dashboards handle scheduling, invoicing, payments, staff and revenue.',
+    highlights: [
+      'Multi-step online booking',
+      'Automatic job pricing',
+      'Invoices & payments',
+      'Owner, admin & staff dashboards',
+    ],
+    stack: ['Laravel', 'Livewire', 'Tailwind CSS', 'SQLite'],
+    url: 'https://bumperbuddies-fd68.vercel.app/',
+    image: '/work/bumper-buddies.png',
+    imageWidth: 1280,
+    imageHeight: 800,
+    featured: true,
+  },
+  {
+    name: 'Kharchu Centre',
+    type: 'Community & events website',
+    summary:
+      'A website for Kharchu Centre New Zealand, a Buddhist community organisation, presenting teachings, events and membership with a calm, editorial design built to welcome newcomers as easily as long-time members.',
+    highlights: ['Events calendar', 'Membership & donations', 'Resources & FAQ', 'Gallery & news'],
+    stack: ['Next.js', 'React'],
+    url: 'https://karchucentre.vercel.app/',
+    image: '/work/karchu-centre.png',
+    imageWidth: 1280,
+    imageHeight: 800,
+  },
+  {
+    name: 'YOLO Hair Salon',
+    type: 'Salon business website',
+    summary:
+      'A site for a Rosedale, Auckland hair and beauty studio — artist profiles, service galleries and testimonials, with a clear path to book by phone, text or Instagram.',
+    highlights: ['Artist profiles & gallery', 'Service pages', 'Client testimonials', 'Direct booking contact'],
+    stack: ['Next.js', 'React'],
+    url: 'https://yolohair-salon.vercel.app/',
+    image: '/work/yolo-hair-salon.png',
+    imageWidth: 1280,
+    imageHeight: 800,
+  },
+];
 
 /* ---------- Process ---------- */
 export const PROCESS_STEPS = [

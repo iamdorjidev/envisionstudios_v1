@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Reveal from './Reveal';
 
 export default function About() {
@@ -27,8 +28,13 @@ export default function About() {
         </Reveal>
 
         <Reveal className="about-card" delay={80}>
-          <div className="about-monogram" aria-hidden="true">
-            <span>TD</span>
+          <div className="about-photo">
+            <Image
+              src="/image/profile.png"
+              alt="Thinley Dorji, founder of enVision Studio"
+              fill
+              sizes="(min-width: 960px) 280px, 60vw"
+            />
           </div>
           <strong>Thinley Dorji</strong>
           <span>Developer · enVision Studio</span>

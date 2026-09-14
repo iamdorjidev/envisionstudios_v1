@@ -733,54 +733,58 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
-.work-preview {
+.work-media {
   background: linear-gradient(160deg, #0d2233, #0b1b28);
-  padding: 34px 34px 0;
-  display: flex;
-  align-items: flex-end;
   border-right: 1px solid var(--bd);
-}
-.wf-screen {
-  width: 100%;
-  background: #0f2637;
-  border: 1px solid var(--bd-dark-2);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 13px;
-  box-shadow: 0 -24px 60px -30px rgba(0, 0, 0, 0.6);
+  align-items: center;
 }
-.wf-line {
-  height: 11px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.12);
+
+/* Real-site preview: a lightweight browser chrome wrapping an actual screenshot. */
+.site-frame {
+  display: block;
+  width: 100%;
+  color: inherit;
 }
-.wf-line--lg {
-  width: 75%;
-  height: 15px;
+.site-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #0a1a27;
+  border-bottom: 1px solid var(--bd-dark);
 }
-.wf-line--md {
-  width: 52%;
+.site-frame-bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
 }
-.wf-line--sm {
-  width: 40%;
+.site-frame-url {
+  margin-left: 8px;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+  padding: 3px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.wf-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 3px 0;
+.site-frame-shot {
+  display: block;
+  overflow: hidden;
 }
-.wf-cards i {
-  height: 46px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
+.site-frame-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s var(--ease);
 }
-.wf-cards i:first-child {
-  background: rgba(216, 24, 31, 0.5);
+.site-frame:hover .site-frame-shot img {
+  transform: scale(1.02);
 }
+
 .work-detail {
   padding: 34px 34px;
 }
@@ -834,43 +838,46 @@ button {
   border-radius: 5px;
   padding: 4px 10px;
 }
-
-.build-concepts {
-  margin-top: 26px;
-  text-align: center;
+.work-detail-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
 }
-.build-concepts-label {
-  font-family: var(--font-display-stack);
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.work-card-body {
+  padding: 24px 26px 26px;
+}
+.work-card-body .work-detail-top {
+  margin-bottom: 8px;
+}
+.work-card-body h3 {
+  font-size: 1.08rem;
+}
+.work-card-body > p {
+  font-size: 0.9rem;
   color: var(--dim);
   margin-bottom: 16px;
-}
-.build-concepts ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-.build-concepts li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.86rem;
-  color: var(--text);
-  border: 1px solid var(--bd);
-  border-radius: 999px;
-  padding: 8px 16px;
-  background: var(--card);
-}
-.build-concepts li .icon {
-  color: var(--red);
-}
-.build-concepts-note {
-  margin-top: 14px;
-  font-size: 0.8rem;
-  color: var(--dim);
 }
 
 /* ---------- About ---------- */
@@ -898,21 +905,16 @@ button {
   flex-direction: column;
   gap: 4px;
 }
-.about-monogram {
-  aspect-ratio: 4 / 3;
+.about-photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
   border-radius: var(--radius-sm);
-  background: linear-gradient(150deg, var(--blue), #052b3f);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   margin-bottom: 16px;
+  background: var(--blue);
 }
-.about-monogram span {
-  font-family: var(--font-display-stack);
-  font-weight: 700;
-  font-size: 2.4rem;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.92);
+.about-photo img {
+  object-fit: cover;
 }
 .about-card strong {
   font-family: var(--font-display-stack);
@@ -1365,9 +1367,12 @@ button {
   .work-feature {
     grid-template-columns: 1fr;
   }
-  .work-preview {
+  .work-media {
     border-right: none;
     border-bottom: 1px solid var(--bd);
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
   }
   .about-inner {
     grid-template-columns: 1fr;
