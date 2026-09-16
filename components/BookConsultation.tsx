@@ -50,7 +50,7 @@ export default function BookConsultation({ variant = 'ghost', size = 'md', label
           suit you and I&apos;ll confirm a call by email — usually within one business day.
         </p>
         <div className="consult-actions">
-          <a href="#contact" className="btn btn-primary" onClick={close}>
+          <a href="/contact" className="btn btn-primary" onClick={close}>
             Go to enquiry form <Icon name="arrowRight" size={15} />
           </a>
           <button type="button" className="btn btn-ghost" onClick={close}>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="legal">
+    <div className="legal">
       <div className="container legal-inner">
         <Link href="/" className="legal-back">
           ← Back to enVision Studio
@@ -45,6 +45,6 @@ export default function PrivacyPage() {
 
         <p className="legal-meta">Last updated: September 2026. This is a general policy for a small studio website.</p>
       </div>
-    </main>
+    </div>
   );
 }

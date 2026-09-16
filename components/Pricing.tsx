@@ -26,7 +26,7 @@ export default function Pricing() {
               <Icon name="check" size={14} /> Build in stages if it suits your budget
             </li>
           </ul>
-          <a href="#contact" className="btn btn-primary">
+          <a href="/contact" className="btn btn-primary">
             Request a Free Quote <Icon name="arrowRight" size={15} />
           </a>
         </Reveal>

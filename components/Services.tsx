@@ -25,7 +25,7 @@ export default function Services() {
           <Reveal className="service-card service-card--cta" delay={120}>
             <h3>Not sure what you need?</h3>
             <p>Tell me the problem and I&apos;ll recommend the simplest way to solve it.</p>
-            <a href="#contact" className="text-link">
+            <a href="/contact" className="text-link">
               Get a free quote <Icon name="arrowRight" size={14} />
             </a>
           </Reveal>

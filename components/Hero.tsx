@@ -20,7 +20,7 @@ export default function Hero() {
             digital solutions that help businesses work better and grow.
           </Reveal>
           <Reveal className="hero-actions" delay={180}>
-            <a href="#contact" className="btn btn-primary btn-lg">
+            <a href="/contact" className="btn btn-primary btn-lg">
               Get a Free Quote <Icon name="arrowRight" size={16} />
             </a>
             <a href="#services" className="btn btn-ghost btn-lg">

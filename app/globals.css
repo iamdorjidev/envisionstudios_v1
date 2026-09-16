@@ -136,6 +136,12 @@ button {
   color: var(--text);
 }
 
+/* Pages that open directly on a .section (no hero above it) need extra
+   clearance so their heading doesn't sit flush under the fixed navbar. */
+main#main > .section:first-child {
+  padding-top: clamp(112px, 15vh, 150px);
+}
+
 .section--ink {
   --bg: var(--ink);
   --text: var(--on-dark);
@@ -1313,7 +1319,7 @@ button {
 }
 .legal-inner {
   max-width: 720px;
-  padding-top: 72px;
+  padding-top: clamp(120px, 16vh, 156px);
   padding-bottom: 96px;
 }
 .legal-back {

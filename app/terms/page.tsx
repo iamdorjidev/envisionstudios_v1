@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="legal">
+    <div className="legal">
       <div className="container legal-inner">
         <Link href="/" className="legal-back">
           ← Back to enVision Studio
@@ -51,6 +51,6 @@ export default function TermsPage() {
           Questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Last updated: September 2026.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

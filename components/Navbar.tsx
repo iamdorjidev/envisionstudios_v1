@@ -56,7 +56,7 @@ export default function Navbar() {
   return (
     <header className={`navbar${scrolled ? ' is-scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#home" className="brand" aria-label="enVision Studio — home" onClick={close}>
+        <a href="/" className="brand" aria-label="enVision Studio — home" onClick={close}>
           <span className="brand-mark">
             en<b>Vision</b> <span>Studio</span>
           </span>
@@ -70,12 +70,12 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
-          <a href="#contact" className="btn btn-primary nav-cta-mobile" onClick={close}>
+          <a href="/contact" className="btn btn-primary nav-cta-mobile" onClick={close}>
             Get a Free Quote
           </a>
         </div>
 
-        <a href="#contact" className="btn btn-primary nav-cta">
+        <a href="/contact" className="btn btn-primary nav-cta">
           Get a Free Quote <Icon name="arrowRight" size={15} />
         </a>
 

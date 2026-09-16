@@ -24,7 +24,7 @@ export default function Footer() {
 
         <div className="footer-contact">
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href="#contact">Get a free quote</a>
+          <a href="/contact">Get a free quote</a>
         </div>
       </div>
 

@@ -59,11 +59,13 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.ENQUIRY_TO_EMAIL;
-  const from = process.env.ENQUIRY_FROM_EMAIL;
+  // Destination and sender have working defaults so only RESEND_API_KEY is
+  // strictly required; both can still be overridden via env vars.
+  const to = process.env.ENQUIRY_TO_EMAIL || 'tdorji.dev@gmail.com';
+  const from = process.env.ENQUIRY_FROM_EMAIL || 'enVision Studio <onboarding@resend.dev>';
 
-  if (!apiKey || !to || !from) {
-    console.error('[enquiry] Missing email env: RESEND_API_KEY / ENQUIRY_TO_EMAIL / ENQUIRY_FROM_EMAIL');
+  if (!apiKey) {
+    console.error('[enquiry] Missing RESEND_API_KEY env var');
     return NextResponse.json(
       { ok: false, message: 'The enquiry service is not configured yet. Please email me directly.' },
       { status: 500 },
