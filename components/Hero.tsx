@@ -10,11 +10,12 @@ export default function Hero() {
           <Reveal as="p" className="eyebrow">
             Auckland, New Zealand
           </Reveal>
-          
+
           <Reveal as="h1" className="hero-title" delay={60}>
             Affordable web &amp; software development for{' '}
             <span className="accent">growing businesses</span>
           </Reveal>
+          
           <Reveal as="p" className="hero-sub" delay={120}>
             From professional business websites to custom systems and applications, I build practical
             digital solutions that help businesses work better and grow.
