@@ -1,5 +1,6 @@
 import Reveal from './Reveal';
 import Icon from './Icon';
+import { PRIMARY_CTA } from '@/lib/content';
 
 export default function Hero() {
   return (
@@ -12,17 +13,17 @@ export default function Hero() {
           </Reveal>
 
           <Reveal as="h1" className="hero-title" delay={60}>
-            Affordable web &amp; software development for{' '}
-            <span className="accent">growing businesses</span>
+            Booking and job management systems for{' '}
+            <span className="accent">Auckland service businesses</span>
           </Reveal>
-          
+
           <Reveal as="p" className="hero-sub" delay={120}>
-            From professional business websites to custom systems and applications, I build practical
-            digital solutions that help businesses work better and grow.
+            Fewer missed jobs, less admin and more enquiries — booking and job management systems built
+            for Auckland service businesses, from the North Shore to Manukau.
           </Reveal>
           <Reveal className="hero-actions" delay={180}>
             <a href="/contact" className="btn btn-primary btn-lg">
-              Get a Free Quote <Icon name="arrowRight" size={16} />
+              {PRIMARY_CTA} <Icon name="arrowRight" size={16} />
             </a>
             <a href="#services" className="btn btn-ghost btn-lg">
               View Services

@@ -1,5 +1,6 @@
 import Reveal from './Reveal';
 import Icon from './Icon';
+import { PRIMARY_CTA } from '@/lib/content';
 
 export default function Pricing() {
   return (
@@ -27,7 +28,7 @@ export default function Pricing() {
             </li>
           </ul>
           <a href="/contact" className="btn btn-primary">
-            Request a Free Quote <Icon name="arrowRight" size={15} />
+            {PRIMARY_CTA} <Icon name="arrowRight" size={15} />
           </a>
         </Reveal>
       </div>

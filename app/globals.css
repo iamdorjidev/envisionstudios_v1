@@ -343,6 +343,13 @@ main#main > .section:first-child {
 .nav-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
   gap: 22px;
 }
 
@@ -363,7 +370,6 @@ main#main > .section:first-child {
 }
 
 .nav-panel {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -404,11 +410,24 @@ main#main > .section:first-child {
 .nav-cta-mobile {
   display: none;
 }
+.nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--on-dark-muted);
+  font-family: var(--font-display-stack);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-phone:hover {
+  color: #fff;
+}
 .nav-toggle {
   display: none;
   color: #fff;
   padding: 4px;
-  margin-left: auto;
 }
 .nav-scrim {
   display: none;
@@ -689,7 +708,23 @@ main#main > .section:first-child {
   font-size: 0.92rem;
   color: var(--dim);
 }
+.service-price {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-display-stack);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--red);
+}
 .service-card--cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   background: var(--blue);
   border-color: var(--blue);
 }
@@ -699,10 +734,11 @@ main#main > .section:first-child {
 }
 .service-card--cta p {
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 .service-card--cta .text-link {
   color: #fff;
+  flex-shrink: 0;
 }
 
 /* ---------- Why ---------- */
@@ -960,17 +996,20 @@ main#main > .section:first-child {
   color: #ff5a60;
 }
 
-/* ---------- Process ---------- */
-.process-grid {
+/* ---------- Steps (Process on /about, How it Works on the homepage) ---------- */
+.steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4px;
 }
-.process-step {
+.steps-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.step-item {
   padding: 26px 22px 30px;
   border-top: 1px solid var(--bd2);
 }
-.process-num {
+.step-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -984,12 +1023,65 @@ main#main > .section:first-child {
   font-size: 0.9rem;
   margin-bottom: 14px;
 }
-.process-step h3 {
+.step-item h3 {
   font-size: var(--fs-h3);
   margin-bottom: 6px;
 }
-.process-step p {
+.step-item p {
   font-size: 0.88rem;
+  color: var(--dim);
+}
+
+/* ---------- Testimonials ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.testimonial-card {
+  position: relative;
+  padding: 30px 28px;
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.testimonial-todo {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-family: var(--font-display-stack);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+.testimonial-quote {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.testimonial-attribution {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-logo {
+  border-radius: 8px;
+  object-fit: cover;
+}
+.testimonial-attribution strong {
+  display: block;
+  font-family: var(--font-display-stack);
+  font-size: 0.92rem;
+  color: var(--head);
+}
+.testimonial-attribution span {
+  font-size: 0.82rem;
   color: var(--dim);
 }
 
@@ -1059,20 +1151,6 @@ main#main > .section:first-child {
 .contact-alt a:hover {
   color: var(--text);
 }
-.contact-consult {
-  margin-top: 22px;
-  padding-top: 20px;
-  border-top: 1px solid var(--bd);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-.contact-consult span {
-  font-size: 0.9rem;
-  color: var(--dim);
-}
-
 .enquiry-form {
   background: var(--card);
   border: 1px solid var(--bd);
@@ -1213,42 +1291,6 @@ main#main > .section:first-child {
   margin-bottom: 22px;
 }
 
-/* ---------- Consultation dialog ---------- */
-.consult-dialog {
-  margin: auto;
-  border: 1px solid var(--bd-light-2);
-  border-radius: var(--radius);
-  padding: 30px;
-  width: min(420px, calc(100vw - 32px));
-  color: var(--ink-text);
-  background: #fff;
-  box-shadow: 0 40px 90px -30px rgba(11, 27, 40, 0.5);
-}
-.consult-dialog::backdrop {
-  background: rgba(11, 27, 40, 0.55);
-}
-.consult-dialog h2 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-.consult-dialog p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-.consult-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.consult-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  color: var(--muted);
-  padding: 4px;
-}
-
 /* ---------- Footer ---------- */
 .footer {
   background: #081521;
@@ -1309,6 +1351,55 @@ main#main > .section:first-child {
 }
 .footer-legal a:hover {
   color: #fff;
+}
+
+/* ---------- Mobile call bar ---------- */
+.mobile-call-bar {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mobile-call-bar {
+    display: flex;
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 900;
+    padding: 10px max(10px, env(safe-area-inset-left)) max(10px, env(safe-area-inset-bottom))
+      max(10px, env(safe-area-inset-right));
+    gap: 10px;
+    background: var(--ink);
+    border-top: 1px solid var(--bd-dark);
+    box-shadow: 0 -12px 30px -12px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition:
+      opacity 0.25s var(--ease),
+      visibility 0.25s var(--ease),
+      transform 0.25s var(--ease);
+  }
+  .mobile-call-bar.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+.mobile-call-bar-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bd-dark-2);
+  color: #fff;
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.mobile-call-bar-btn.is-primary {
+  background: var(--red);
+  border-color: var(--red);
 }
 
 /* ---------- Legal pages ---------- */
@@ -1389,7 +1480,7 @@ main#main > .section:first-child {
   .contact-inner {
     grid-template-columns: 1fr;
   }
-  .process-grid {
+  .steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1425,9 +1516,22 @@ main#main > .section:first-child {
   }
   .nav-cta-mobile {
     display: inline-flex;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    font-size: 0.9rem;
   }
   .nav-toggle {
     display: inline-flex;
+  }
+  .nav-phone-text {
+    display: none;
+  }
+  .nav-phone {
+    position: relative;
+    z-index: 1002;
+    color: #fff;
+    padding: 6px;
   }
   .nav-scrim {
     display: block;
@@ -1456,13 +1560,16 @@ main#main > .section:first-child {
   .services-grid {
     grid-template-columns: 1fr;
   }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
   .why-grid {
     grid-template-columns: 1fr;
   }
   .work-highlights {
     grid-template-columns: 1fr;
   }
-  .process-grid {
+  .steps-grid {
     grid-template-columns: 1fr;
   }
   .form-row {
@@ -1478,6 +1585,13 @@ main#main > .section:first-child {
   .final-cta-actions .btn {
     flex: 1 1 auto;
     justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+  .pricing-inner .btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
   }
 }
 

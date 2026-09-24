@@ -1,7 +1,7 @@
 import Reveal from './Reveal';
 import Icon from './Icon';
 import SectionHeading from './SectionHeading';
-import { SERVICES } from '@/lib/content';
+import { SERVICES, PRIMARY_CTA } from '@/lib/content';
 
 export default function Services() {
   return (
@@ -9,7 +9,7 @@ export default function Services() {
       <div className="container">
         <SectionHeading
           eyebrow="Services"
-          title={<>What I can help you build</>}
+          title={<>What I build for Auckland service businesses</>}
           lead="The essentials, done well — pick what fits, or ask and I'll point you the right way."
         />
         <div className="services-grid">
@@ -20,13 +20,16 @@ export default function Services() {
               </span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
+              <span className="service-price">{s.priceLabel}</span>
             </Reveal>
           ))}
           <Reveal className="service-card service-card--cta" delay={120}>
-            <h3>Not sure what you need?</h3>
-            <p>Tell me the problem and I&apos;ll recommend the simplest way to solve it.</p>
+            <div>
+              <h3>Not sure what you need?</h3>
+              <p>Tell me the problem and I&apos;ll recommend the simplest way to solve it.</p>
+            </div>
             <a href="/contact" className="text-link">
-              Get a free quote <Icon name="arrowRight" size={14} />
+              {PRIMARY_CTA} <Icon name="arrowRight" size={14} />
             </a>
           </Reveal>
         </div>

@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { SITE } from '@/lib/content';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import MobileCallBar from '@/components/MobileCallBar';
 import './globals.css';
 
 const inter = Inter({
@@ -20,38 +21,40 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const description =
-  'Affordable web and software development in Auckland, New Zealand. I build business websites, custom web applications and business systems — booking, invoicing, dashboards and payments — for small businesses, startups and individuals.';
+  'Booking and job management systems for Auckland service businesses — plus the websites they sit behind. Fewer missed jobs, less admin, more enquiries, built and supported by one developer based in Auckland.';
+
+const title = 'Booking & Job Management Systems for Auckland Service Businesses';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'enVision Studio — Affordable Web & Software Development in Auckland',
+    default: `${title} — enVision Studio`,
     template: '%s — enVision Studio',
   },
   description,
   applicationName: SITE.name,
   authors: [{ name: 'Thinley Dorji' }],
   keywords: [
+    'booking system developer Auckland',
+    'job management software Auckland',
     'web development Auckland',
-    'affordable web developer Auckland',
     'website development New Zealand',
     'custom web application developer',
     'business systems developer Auckland',
-    'booking system developer',
     'small business website Auckland',
   ],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
-    title: 'enVision Studio — Affordable Web & Software Development',
+    title: `${title} — enVision Studio`,
     description,
     url: SITE.url,
     locale: 'en_NZ',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'enVision Studio — Affordable Web & Software Development',
+    title: `${title} — enVision Studio`,
     description,
   },
   robots: { index: true, follow: true },
@@ -64,23 +67,24 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': 'LocalBusiness',
   name: SITE.name,
   description,
   url: SITE.url,
   email: SITE.email,
+  telephone: SITE.phoneHref.replace('tel:', ''),
   areaServed: [
     { '@type': 'City', name: 'Auckland' },
     { '@type': 'Country', name: 'New Zealand' },
   ],
   address: { '@type': 'PostalAddress', addressLocality: 'Auckland', addressCountry: 'NZ' },
   founder: { '@type': 'Person', name: 'Thinley Dorji', jobTitle: 'Software Developer' },
+  // TODO: add real social/profile URLs here (sameAs: [...]) once they exist —
+  // intentionally omitted rather than invented.
   makesOffer: [
-    'Business websites',
-    'Custom web applications',
-    'Business management systems',
-    'Booking & payment solutions',
-    'Website maintenance',
+    'Business Websites',
+    'Booking & Job Management Systems',
+    'Ongoing Support',
   ].map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
 };
 
@@ -94,6 +98,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <MobileCallBar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

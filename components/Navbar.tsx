@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { NAV_LINKS } from '@/lib/content';
+import { NAV_LINKS, PRIMARY_CTA, SITE } from '@/lib/content';
 import Icon from './Icon';
 
 export default function Navbar() {
@@ -62,34 +62,41 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div id="primary-nav" ref={panelRef} className={`nav-panel${open ? ' is-open' : ''}`}>
-          <nav aria-label="Primary" className="nav-links">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={close}>
-                {l.label}
-              </a>
-            ))}
-          </nav>
-          <a href="/contact" className="btn btn-primary nav-cta-mobile" onClick={close}>
-            Get a Free Quote
+        <div className="nav-right">
+          <div id="primary-nav" ref={panelRef} className={`nav-panel${open ? ' is-open' : ''}`}>
+            <nav aria-label="Primary" className="nav-links">
+              {NAV_LINKS.map((l) => (
+                <a key={l.href} href={l.href} onClick={close}>
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+            <a href="/contact" className="btn btn-primary nav-cta-mobile" onClick={close}>
+              {PRIMARY_CTA}
+            </a>
+          </div>
+
+          <a href={SITE.phoneHref} className="nav-phone" aria-label={`Call ${SITE.phone}`} onClick={close}>
+            <Icon name="phone" size={16} />
+            <span className="nav-phone-text">{SITE.phone}</span>
           </a>
+
+          <a href="/contact" className="btn btn-primary nav-cta">
+            {PRIMARY_CTA} <Icon name="arrowRight" size={15} />
+          </a>
+
+          <button
+            ref={toggleRef}
+            type="button"
+            className="nav-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="primary-nav"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <Icon name={open ? 'close' : 'menu'} size={24} />
+          </button>
         </div>
-
-        <a href="/contact" className="btn btn-primary nav-cta">
-          Get a Free Quote <Icon name="arrowRight" size={15} />
-        </a>
-
-        <button
-          ref={toggleRef}
-          type="button"
-          className="nav-toggle"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="primary-nav"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <Icon name={open ? 'close' : 'menu'} size={24} />
-        </button>
       </div>
 
       <button

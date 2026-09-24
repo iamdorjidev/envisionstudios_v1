@@ -27,10 +27,15 @@ function resolveSiteUrl(): string {
 export const SITE = {
   name: 'enVision Studio',
   url: resolveSiteUrl(),
-  email: 'tdorji.dev@gmail.com',
+  email: 'thinley@envisionstudio.co.nz',
+  phone: '022 678 3308',
+  phoneHref: 'tel:+64226783308',
   location: 'Auckland, New Zealand',
   positioning: 'Websites • Web Applications • Business Systems',
 } as const;
+
+/** Primary conversion CTA, used verbatim everywhere it appears. */
+export const PRIMARY_CTA = 'Get a free 10-minute review of your setup';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -49,32 +54,27 @@ export const VALUE_POINTS = [
   { icon: 'chat', title: 'Direct communication', text: 'You deal with the developer, not an account manager.' },
 ] as const;
 
-/* ---------- Services ---------- */
+/* ---------- Services ----------
+   Starting prices intentionally omitted — show "Custom quote" until real
+   figures are confirmed, rather than a number nobody has signed off on. */
 export const SERVICES = [
   {
     icon: 'globe',
     title: 'Business Websites',
-    text: 'Professional, responsive websites designed to turn visitors into enquiries.',
+    text: 'A professional website that ranks locally and turns Auckland visitors into enquiries — not just a digital brochure.',
+    priceLabel: 'Custom quote',
   },
   {
-    icon: 'layout',
-    title: 'Custom Web Applications',
-    text: 'Systems built around the way your business actually works.',
-  },
-  {
-    icon: 'database',
-    title: 'Business Management Systems',
-    text: 'Booking, invoicing, customer management, dashboards and workflow tools.',
-  },
-  {
-    icon: 'card',
-    title: 'Booking & Payment Solutions',
-    text: 'Make it easier for customers to book appointments and pay online.',
+    icon: 'calendar',
+    title: 'Booking & Job Management Systems',
+    text: 'Online booking, job scheduling and customer records in one system — fewer missed jobs, less admin, more time on the tools.',
+    priceLabel: 'Custom quote',
   },
   {
     icon: 'wrench',
-    title: 'Website Maintenance',
-    text: 'Updates, improvements, hosting, domains and ongoing support.',
+    title: 'Ongoing Support',
+    text: 'Hosting, updates and fixes so your site and systems keep working — one call or email away when something needs changing.',
+    priceLabel: 'Custom quote',
   },
 ] as const;
 
@@ -145,12 +145,31 @@ export const PROJECTS: readonly Project[] = [
   },
 ];
 
-/* ---------- Process ---------- */
+/* ---------- Process (full version, on /about) ---------- */
 export const PROCESS_STEPS = [
   { num: '1', title: 'Tell me what you need', text: 'Send your requirements or a rough idea.' },
   { num: '2', title: 'Get a clear quote', text: "I'll recommend the right solution and provide pricing." },
   { num: '3', title: 'We build it', text: 'Development, testing and your feedback along the way.' },
   { num: '4', title: 'Launch & support', text: 'Your solution goes live, with ongoing support available.' },
+] as const;
+
+/* ---------- How it works (short version, on the homepage) ---------- */
+export const HOW_IT_WORKS_STEPS = [
+  {
+    num: '1',
+    title: 'Free call',
+    text: "A quick, no-pressure call to understand what's slowing you down and what you actually need.",
+  },
+  {
+    num: '2',
+    title: 'Fixed quote',
+    text: 'A clear, fixed price for the work — agreed before anything starts, so there are no surprises.',
+  },
+  {
+    num: '3',
+    title: 'Build & launch',
+    text: "Your site or system gets built, tested and launched, with support once you're live.",
+  },
 ] as const;
 
 /* ---------- Contact form options ---------- */

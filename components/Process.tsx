@@ -7,10 +7,10 @@ export default function Process() {
     <section className="section process" id="process">
       <div className="container">
         <SectionHeading eyebrow="How it works" title={<>From first message to launch</>} />
-        <ol className="process-grid">
+        <ol className="steps-grid">
           {PROCESS_STEPS.map((s, i) => (
-            <Reveal as="li" className="process-step" key={s.num} delay={(i % 4) * 50}>
-              <span className="process-num">{s.num}</span>
+            <Reveal as="li" className="step-item" key={s.num} delay={(i % 4) * 50}>
+              <span className="step-num">{s.num}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </Reveal>

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import Icon from './Icon';
-import BookConsultation from './BookConsultation';
 import { SITE, SERVICE_OPTIONS, BUDGET_OPTIONS, CONTACT_METHODS } from '@/lib/content';
 import type { EnquiryFields } from '@/lib/enquiry';
 
@@ -117,10 +116,10 @@ export default function Contact() {
             <Icon name="mapPin" size={16} />
             {SITE.location} — available remotely
           </p>
-          <div className="contact-consult">
-            <span>Prefer to talk it through?</span>
-            <BookConsultation variant="ghost" />
-          </div>
+          <p className="contact-alt">
+            <Icon name="phone" size={16} />
+            <a href={SITE.phoneHref}>{SITE.phone}</a>
+          </p>
         </div>
 
         <form ref={formRef} className="enquiry-form" onSubmit={handleSubmit} noValidate>

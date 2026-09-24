@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SITE, NAV_LINKS } from '@/lib/content';
+import { SITE, NAV_LINKS, PRIMARY_CTA } from '@/lib/content';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -24,7 +24,8 @@ export default function Footer() {
 
         <div className="footer-contact">
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href="/contact">Get a free quote</a>
+          <a href={SITE.phoneHref}>{SITE.phone}</a>
+          <a href="/contact">{PRIMARY_CTA}</a>
         </div>
       </div>
 

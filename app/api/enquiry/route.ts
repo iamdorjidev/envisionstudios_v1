@@ -61,7 +61,7 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   // Destination and sender have working defaults so only RESEND_API_KEY is
   // strictly required; both can still be overridden via env vars.
-  const to = process.env.ENQUIRY_TO_EMAIL || 'tdorji.dev@gmail.com';
+  const to = process.env.ENQUIRY_TO_EMAIL || 'thinley@envisionstudio.co.nz';
   const from = process.env.ENQUIRY_FROM_EMAIL || 'enVision Studio <onboarding@resend.dev>';
 
   if (!apiKey) {

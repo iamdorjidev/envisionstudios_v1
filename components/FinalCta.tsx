@@ -1,6 +1,7 @@
 import Reveal from './Reveal';
 import Icon from './Icon';
 import BookConsultation from './BookConsultation';
+import { PRIMARY_CTA } from '@/lib/content';
 
 export default function FinalCta() {
   return (
@@ -14,7 +15,7 @@ export default function FinalCta() {
           </p>
           <div className="final-cta-actions">
             <a href="/contact" className="btn btn-primary btn-lg">
-              Get a Free Quote <Icon name="arrowRight" size={16} />
+              {PRIMARY_CTA} <Icon name="arrowRight" size={16} />
             </a>
             <BookConsultation variant="light" size="lg" />
           </div>

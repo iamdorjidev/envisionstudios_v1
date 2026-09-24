@@ -6,7 +6,7 @@ import Process from '@/components/Process';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Meet Thinley Dorji, the developer behind enVision Studio — an independent, affordable web and software development studio based in Auckland, New Zealand.',
+    'Meet Thinley Dorji, the developer behind enVision Studio — an independent web and software development studio based in Auckland, New Zealand.',
   alternates: { canonical: '/about' },
 };
 
