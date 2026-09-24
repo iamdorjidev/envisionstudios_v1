@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { NAV_LINKS, PRIMARY_CTA, SITE } from '@/lib/content';
 import Icon from './Icon';
 
@@ -57,9 +58,14 @@ export default function Navbar() {
     <header className={`navbar${scrolled ? ' is-scrolled' : ''}`}>
       <div className="container nav-inner">
         <a href="/" className="brand" aria-label="enVision Studio — home" onClick={close}>
-          <span className="brand-mark">
-            en<b>Vision</b> <span>Studio</span>
-          </span>
+          <Image
+            src="/image/logo-cropped.png"
+            alt="enVision Studio"
+            width={466}
+            height={113}
+            className="brand-logo"
+            priority
+          />
         </a>
 
         <div className="nav-right">

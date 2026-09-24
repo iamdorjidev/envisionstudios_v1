@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Fraunces } from 'next/font/google';
 import { SITE } from '@/lib/content';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,17 +13,19 @@ const inter = Inter({
   variable: '--font-body',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['500', '600', '700'],
+  weight: 'variable',
+  style: ['normal', 'italic'],
+  axes: ['opsz', 'SOFT', 'WONK'],
   variable: '--font-display',
 });
 
 const description =
-  'Booking and job management systems for Auckland service businesses — plus the websites they sit behind. Fewer missed jobs, less admin, more enquiries, built and supported by one developer based in Auckland.';
+  'Websites and business systems that get Auckland businesses more customers. I design and build things that turn visitors into enquiries and make it easier to win and keep the work — one developer, based in Auckland.';
 
-const title = 'Booking & Job Management Systems for Auckland Service Businesses';
+const title = 'Websites & Business Systems for Auckland Businesses';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -35,13 +37,13 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   authors: [{ name: 'Thinley Dorji' }],
   keywords: [
-    'booking system developer Auckland',
-    'job management software Auckland',
-    'web development Auckland',
-    'website development New Zealand',
-    'custom web application developer',
+    'web developer Auckland',
+    'website designer Auckland',
     'business systems developer Auckland',
+    'custom web application developer',
     'small business website Auckland',
+    'booking system developer Auckland',
+    'website development New Zealand',
   ],
   alternates: { canonical: '/' },
   openGraph: {
@@ -83,14 +85,14 @@ const jsonLd = {
   // intentionally omitted rather than invented.
   makesOffer: [
     'Business Websites',
-    'Booking & Job Management Systems',
+    'Business Systems',
     'Ongoing Support',
   ].map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-NZ" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en-NZ" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           Skip to content

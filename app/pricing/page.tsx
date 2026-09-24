@@ -5,7 +5,7 @@ import FinalCta from '@/components/FinalCta';
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Transparent pricing for booking systems, job management tools and websites for Auckland service businesses — no rigid price list, just a clear quote for what you actually need.',
+    'Transparent pricing for websites and business systems for Auckland businesses — no rigid price list, just a clear quote for what you actually need.',
   alternates: { canonical: '/pricing' },
 };
 

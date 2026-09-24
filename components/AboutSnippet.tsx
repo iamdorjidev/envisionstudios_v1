@@ -11,8 +11,8 @@ export default function AboutSnippet() {
             Built and run by <span className="accent">one developer</span>
           </h2>
           <p>
-            I&apos;m Thinley Dorji, the developer behind enVision Studio. I design and build booking
-            systems, job management tools and websites for Auckland service businesses — one project,
+            I&apos;m Thinley Dorji, the developer behind enVision Studio. I design and build websites and
+            business systems that help Auckland businesses win and keep more customers — one project,
             one client, done properly.
           </p>
           <a href="/about" className="text-link">

@@ -13,13 +13,13 @@ export default function Hero() {
           </Reveal>
 
           <Reveal as="h1" className="hero-title" delay={60}>
-            Booking and job management systems for{' '}
-            <span className="accent">Auckland service businesses</span>
+            Websites and systems that get{' '}
+            <span className="accent">your business more customers</span>
           </Reveal>
 
           <Reveal as="p" className="hero-sub" delay={120}>
-            Fewer missed jobs, less admin and more enquiries — booking and job management systems built
-            for Auckland service businesses, from the North Shore to Manukau.
+            Fewer missed enquiries, less manual admin, more paying customers — websites and business
+            systems built for Auckland businesses, from the North Shore to Manukau.
           </Reveal>
           <Reveal className="hero-actions" delay={180}>
             <a href="/contact" className="btn btn-primary btn-lg">

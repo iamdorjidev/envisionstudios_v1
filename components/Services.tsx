@@ -9,7 +9,7 @@ export default function Services() {
       <div className="container">
         <SectionHeading
           eyebrow="Services"
-          title={<>What I build for Auckland service businesses</>}
+          title={<>What I build for Auckland businesses</>}
           lead="The essentials, done well — pick what fits, or ask and I'll point you the right way."
         />
         <div className="services-grid">

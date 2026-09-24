@@ -61,13 +61,13 @@ export const SERVICES = [
   {
     icon: 'globe',
     title: 'Business Websites',
-    text: 'A professional website that ranks locally and turns Auckland visitors into enquiries — not just a digital brochure.',
+    text: 'A website built to turn visitors into customers — fast, clear, and easy for Auckland customers to find and trust.',
     priceLabel: 'Custom quote',
   },
   {
-    icon: 'calendar',
-    title: 'Booking & Job Management Systems',
-    text: 'Online booking, job scheduling and customer records in one system — fewer missed jobs, less admin, more time on the tools.',
+    icon: 'database',
+    title: 'Business Systems',
+    text: 'Booking, job tracking, customer records — whatever your business needs to run smoother and win more work.',
     priceLabel: 'Custom quote',
   },
   {

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE, NAV_LINKS, PRIMARY_CTA } from '@/lib/content';
 
 export default function Footer() {
@@ -7,9 +8,13 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <span className="brand-mark">
-            en<b>Vision</b> <span>Studio</span>
-          </span>
+          <Image
+            src="/image/logo-cropped.png"
+            alt="enVision Studio"
+            width={466}
+            height={113}
+            className="brand-logo"
+          />
           <p>{SITE.positioning}</p>
           <p className="footer-loc">{SITE.location}</p>
         </div>

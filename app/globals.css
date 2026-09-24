@@ -34,7 +34,7 @@
   --radius-sm: 9px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  --font-display-stack: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-display-stack: var(--font-display), Georgia, 'Times New Roman', serif;
   --font-body-stack: var(--font-body), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --fs-display: clamp(2.2rem, 4.4vw, 3.25rem);
@@ -84,7 +84,7 @@ h4 {
   font-family: var(--font-display-stack);
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--head);
 }
 
@@ -353,20 +353,15 @@ main#main > .section:first-child {
   gap: 22px;
 }
 
-.brand-mark {
-  font-family: var(--font-display-stack);
-  font-weight: 500;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  color: #fff;
+.brand-logo {
+  display: block;
+  height: 58px;
+  width: auto;
 }
-.brand-mark b {
-  font-weight: 700;
-  color: #fff;
-}
-.brand-mark span {
-  color: var(--on-dark-muted);
-  font-weight: 500;
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 44px;
+  }
 }
 
 .nav-panel {
@@ -1309,9 +1304,9 @@ main#main > .section:first-child {
 .footer-brand {
   max-width: 280px;
 }
-.footer-brand .brand-mark {
-  display: inline-block;
-  margin-bottom: 10px;
+.footer-brand .brand-logo {
+  height: 50px;
+  margin-bottom: 14px;
 }
 .footer-brand p {
   font-size: 0.86rem;
