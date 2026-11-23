@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Reveal from './Reveal';
+import Team from './Team';
 
 export default function AboutSnippet() {
   return (
@@ -8,30 +8,23 @@ export default function AboutSnippet() {
         <Reveal className="about-copy">
           <p className="eyebrow">About</p>
           <h2 className="section-title">
-            Built and run by <span className="accent">one developer</span>
+            A small team, <span className="accent">fully invested</span> in your project
           </h2>
           <p>
-            I&apos;m Thinley Dorji, the developer behind enVision Studio. I design and build websites and
-            business systems that help Auckland businesses win and keep more customers — one project,
-            one client, done properly.
+            enVision Studio is Thinley Dorji and Sangay Choden, based in Auckland. Sangay works with you
+            to understand how your business runs and what it needs; Thinley leads the design and build.
+            Together we deliver websites and business systems that help Auckland businesses win and keep
+            more customers.
+          </p>
+          <p>
+            You deal directly with the people doing the work, from first call to launch and beyond.
           </p>
           <a href="/about" className="text-link">
-            More about me
+            More about us
           </a>
         </Reveal>
 
-        <Reveal className="about-card" delay={80}>
-          <div className="about-photo">
-            <Image
-              src="/image/profile.png"
-              alt="Thinley Dorji, founder of enVision Studio"
-              fill
-              sizes="(min-width: 960px) 280px, 60vw"
-            />
-          </div>
-          <strong>Thinley Dorji</strong>
-          <span>Based in Auckland, New Zealand</span>
-        </Reveal>
+        <Team />
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Image
-            src="/image/logo-cropped.png"
+            src="/image/logo-on-dark.png"
             alt="enVision Studio"
             width={466}
             height={113}

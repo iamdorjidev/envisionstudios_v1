@@ -59,7 +59,7 @@ export default function Navbar() {
       <div className="container nav-inner">
         <a href="/" className="brand" aria-label="enVision Studio — home" onClick={close}>
           <Image
-            src="/image/logo-cropped.png"
+            src="/image/logo-on-dark.png"
             alt="enVision Studio"
             width={466}
             height={113}

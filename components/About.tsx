@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Reveal from './Reveal';
+import Team from './Team';
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
         <Reveal className="about-copy">
           <p className="eyebrow">About</p>
           <h2 className="section-title">
-            A developer who understands <span className="accent">business</span>
+            A team that understands <span className="accent">business</span>
           </h2>
           <p>
             I&apos;m Thinley Dorji, a software developer based in Auckland, New Zealand. enVision Studio
@@ -22,24 +22,17 @@ export default function About() {
             developer — including a lead role — delivering software for a development company.
           </p>
           <p>
-            That means you get someone who can scope the right solution, build it properly, and explain
+            Sangay Choden is our Business Analyst and Developer, working with clients to map out how
+            their business runs, turning that into clear requirements, and helping build and test the
+            solution — so what we deliver fits the way you actually work.
+          </p>
+          <p>
+            That means you get a team who can scope the right solution, build it properly, and explain
             the decisions in plain language.
           </p>
         </Reveal>
 
-        <Reveal className="about-card" delay={80}>
-          <div className="about-photo">
-            <Image
-              src="/image/profile.png"
-              alt="Thinley Dorji, founder of enVision Studio"
-              fill
-              sizes="(min-width: 960px) 280px, 60vw"
-            />
-          </div>
-          <strong>Thinley Dorji</strong>
-          <span>Developer · enVision Studio</span>
-          <span>Auckland, New Zealand</span>
-        </Reveal>
+        <Team />
       </div>
     </section>
   );

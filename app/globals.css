@@ -333,6 +333,10 @@ main#main > .section:first-child {
     border-color 0.3s var(--ease),
     backdrop-filter 0.3s var(--ease);
 }
+/* Pages that open on a light section have no dark hero behind the navbar,
+   so give it its solid bar from the start to keep the logo and links legible. */
+body:has(main#main > .section--paper:first-child) .navbar,
+body:has(main#main > .legal:first-child) .navbar,
 .navbar.is-scrolled {
   padding: 9px 0;
   background: rgba(11, 27, 40, 0.85);
@@ -353,14 +357,33 @@ main#main > .section:first-child {
   gap: 22px;
 }
 
+.brand {
+  flex-shrink: 0;
+}
+/* Never let the flex row squash the logo out of proportion. */
 .brand-logo {
   display: block;
-  height: 58px;
+  height: 46px;
   width: auto;
+  max-width: none;
+  flex-shrink: 0;
 }
 @media (max-width: 640px) {
   .brand-logo {
-    height: 44px;
+    height: 38px;
+  }
+}
+/* Between tablet and wide desktop the nav is tight: drop the phone label. */
+@media (max-width: 1320px) {
+  .nav-phone-text {
+    display: none;
+  }
+  .nav-right,
+  .nav-panel {
+    gap: 18px;
+  }
+  .nav-links {
+    gap: 22px;
   }
 }
 
@@ -920,9 +943,17 @@ main#main > .section:first-child {
 /* ---------- About ---------- */
 .about-inner {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 6vw, 64px);
   align-items: start;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.team-grid .about-card {
+  padding: 16px;
 }
 .about-copy h2 {
   margin-bottom: 18px;
@@ -1024,59 +1055,6 @@ main#main > .section:first-child {
 }
 .step-item p {
   font-size: 0.88rem;
-  color: var(--dim);
-}
-
-/* ---------- Testimonials ---------- */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.testimonial-card {
-  position: relative;
-  padding: 30px 28px;
-  background: var(--card);
-  border: 1px solid var(--bd);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-}
-.testimonial-todo {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-family: var(--font-display-stack);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--red);
-  border: 1px solid var(--red);
-  border-radius: 999px;
-  padding: 3px 10px;
-}
-.testimonial-quote {
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: var(--text);
-  margin-bottom: 20px;
-}
-.testimonial-attribution {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.testimonial-logo {
-  border-radius: 8px;
-  object-fit: cover;
-}
-.testimonial-attribution strong {
-  display: block;
-  font-family: var(--font-display-stack);
-  font-size: 0.92rem;
-  color: var(--head);
-}
-.testimonial-attribution span {
-  font-size: 0.82rem;
   color: var(--dim);
 }
 
@@ -1305,7 +1283,7 @@ main#main > .section:first-child {
   max-width: 280px;
 }
 .footer-brand .brand-logo {
-  height: 50px;
+  height: 46px;
   margin-bottom: 14px;
 }
 .footer-brand p {
@@ -1469,8 +1447,8 @@ main#main > .section:first-child {
   .about-inner {
     grid-template-columns: 1fr;
   }
-  .about-card {
-    max-width: 320px;
+  .team-grid {
+    max-width: 520px;
   }
   .contact-inner {
     grid-template-columns: 1fr;
@@ -1553,9 +1531,6 @@ main#main > .section:first-child {
     grid-template-columns: 1fr;
   }
   .services-grid {
-    grid-template-columns: 1fr;
-  }
-  .testimonial-grid {
     grid-template-columns: 1fr;
   }
   .why-grid {

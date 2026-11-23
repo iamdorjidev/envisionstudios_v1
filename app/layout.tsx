@@ -23,7 +23,7 @@ const fraunces = Fraunces({
 });
 
 const description =
-  'Websites and business systems that get Auckland businesses more customers. I design and build things that turn visitors into enquiries and make it easier to win and keep the work — one developer, based in Auckland.';
+  'Websites and business systems that get Auckland businesses more customers. We design and build things that turn visitors into enquiries and make it easier to win and keep the work — a small team based in Auckland.';
 
 const title = 'Websites & Business Systems for Auckland Businesses';
 

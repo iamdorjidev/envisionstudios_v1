@@ -1,6 +1,6 @@
 /**
  * Single source of truth for site copy and structured data.
- * Written in the first person — enVision Studio is a solo studio.
+ * enVision Studio is a small team (Thinley Dorji + Sangay Choden). Much of the copy is still first person.
  */
 
 const FALLBACK_SITE_URL = 'https://www.envisionstudio.co.nz';
@@ -118,6 +118,18 @@ export const PROJECTS: readonly Project[] = [
     imageWidth: 1280,
     imageHeight: 800,
     featured: true,
+  },
+  {
+    name: 'Bhutanese Association of New Zealand',
+    type: 'Community organisation website',
+    summary:
+      'The national website for BANZ, launched on 11 November 2026. It brings events, membership registration, donations, welfare support and settlement help for newcomers together in one welcoming place for Bhutanese people across New Zealand.',
+    highlights: ['Online membership registration', 'Events & news', 'Donations', 'New to NZ guidance'],
+    stack: ['Next.js', 'React'],
+    url: 'https://bhutanese.org.nz/',
+    image: '/work/banz.png',
+    imageWidth: 1280,
+    imageHeight: 800,
   },
   {
     name: 'Kharchu Centre',
